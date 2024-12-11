@@ -20,9 +20,8 @@ body{
 .container{
     background-image: linear-gradient(to right, #01022dc5 40%, #00000088),
     url(download.webp);
-    background-size: cover;
     background-position: center;
-    width: 90%;
+    width: 88%;
     height: 620px;
 }
 
