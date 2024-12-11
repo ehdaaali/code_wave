@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  .cv-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cv-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .cv-table td {
+    padding: 10px;
+    vertical-align: top;
+  }
+  .image img {
+    width :150px;
+    height: 120px;
+    margin-left: 30px;
+  }
+  .header {
+    text-align: center;
+    margin-right: 30px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+  
+  .header p {
+    margin: 5px 0;
+  }
+  
+  .section-title {
+    background-color: #9a9da0;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .job-title {
+    font-weight: bold;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  ul li {
+    margin-bottom: 5px;
+  }
+  .footer{
+    color: rgb(20, 16, 16);
+    text-align: center;
+  }
