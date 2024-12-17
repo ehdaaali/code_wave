@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Of Rectangle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h2 {
+            color: #007BFF;
+            margin-left: 44%;
+            margin-top: 9%;
+        }
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-right: 35px;
+            background-color: #fff;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #2e8842;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #093010;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: transparent;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Area Of Rectangle</h2>
+    <div class="container">
+        <label for="num1">Enter Length Number:</label>
+        <input type="number" id="num1" >
+        
+        <label for="num2">Enter Width Number:</label>
+        <input type="number" id="num2" >
+        
+        <button onclick="area()">Calculate</button>
+        
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function area() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const output = document.getElementById("output");
+
+            if (isNaN(num1) || isNaN(num2)) {
+                output.innerHTML = "<p style='color:red ;'>Please enter valid numbers!</p>";
+                return;
+            }
+
+            const area = num1 * num2;
+            
+
+            output.innerHTML = `
+                <p>Input : L= ${num1}  W= ${num2}</p>
+                <p>Output Area = ${area}</p>
+                
+            `;
+        }
+    </script>
+</body>
+</html>
