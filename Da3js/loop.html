@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        const message  = prompt("Please enter your message:");
+        
+        for (let index = 1; index <=6; index++) {
+            const heading = document.createElement(`h${index}`);
+            heading.textContent = message;
+            document.body.appendChild(heading);    
+        }
+    </script>
+</body>
+</html>

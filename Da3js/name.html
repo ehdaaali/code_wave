@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        alert("Welcome to my Site!");
+
+        const userName = prompt("Please enter your name:").toUpperCase();
+
+        const chooseColor = prompt("Choose a color (red, green, or blue):");
+
+        const Colors = ["red", "green", "blue"];
+        const textColor = Colors.includes(chooseColor) ? chooseColor : "black";
+
+        document.body.innerHTML = `<h1 style="color: ${textColor};">Welcome, ${userName} !</h1>`;
+
+        
+
+    </script>
+</body>
+</html>

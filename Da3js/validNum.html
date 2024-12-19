@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValidNumber</title>
+</head>
+<body>
+    <script>
+     let count = 0;
+
+do {
+    let input = prompt("Enter a numeric value (Enter 0 to stop):");
+    if (isNaN(input) || input.trim() === "") {
+        alert("Invalid input. Please enter a numeric value.");
+        continue;
+    }
+    let value = parseFloat(input);
+    sum = value + value;
+    if (sum === 0 || value === 100 || sum > 100) {
+        // break;
+        alert('plz enter valid number');
+        continue
+    };
+
+    alert(`Current value: ${value} Final total sum: ${sum}`);
+    count++
+} while ( count > 100);
+
+
+    </script>
+</body>
+</html>
