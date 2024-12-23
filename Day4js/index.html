@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        // Q1. Create a function that accepts only 2 parameter
+        function two(param1, param2) {
+        if (arguments.length !== 2) {
+            throw new Error("Please must be 2 parameters.");
+        }
+        console.log(" *Q1")
+        return `Received parameters: ${param1} and ${param2}`;
+        }
+        try {
+            console.log(two(3, 8)); 
+            console.log(two(9));
+        } catch (error) {
+            console.error(error.message);
+        }
+
+        // Q2. Write your own function that can add n values 
+        function numerical(...numbers) {
+            if (!numbers.every(number => typeof number === 'number' && !isNaN(number))) {
+                return 'Error: All parameters should be numerical values only.';
+            }
+            return numbers.reduce((sum, num) => sum + num, 0);
+        }
+        console.log(" *Q2")
+        console.log(numerical(23, 66, 8));
+        console.log(numerical(7, 'Ehdaa', 1));
+        console.log(numerical(-99, 0 , 4)); 
+        console.log(numerical(-99, '9', 4)); 
+
+
+        // Q3. Write a function that takes any number of parameters 
+        function reverse(...params) {
+            return params.reverse();
+        }
+        console.log(" *Q3")
+        console.log(reverse(3, 7, 9, 6)); 
+        console.log(reverse('Challenges', 'JavaScript', 'Day4')); 
+        
+        // Q4.make function isPrime() to check if the number is prime or not.
+        function isPrime(number) {
+            if (number <= 1) {
+                return false; 
+            }
+            if (number <= 3) {
+                return true; 
+            }
+            if (number % 2 === 0 || number % 3 === 0) {
+                return false; 
+            }
+
+            for (let i = 5; i * i <= number; i += 6) {
+                if (number % i === 0 || number % (i + 2) === 0) {
+                    return false; 
+                }
+            }
+
+            return true;
+        }
+        console.log(" *Q4")
+        console.log(isPrime(2)); 
+        console.log(isPrime(17)); 
+        console.log(isPrime(27));
+        console.log(isPrime(37)); 
+        console.log(isPrime(48));
+
+
+    </script>
+</body>
+</html>
