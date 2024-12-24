@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment:Day5js</title>
+</head>
+<body>
+    <script>
+        // Q1.Write a script to determine whether the entered string is palindrome or not
+        const input = prompt("Enter a string to check if it's a palindrome:");
+
+        const caseSensitive = prompt("Should the check be case-sensitive? (yes/no)").toLowerCase();
+
+        const chosenInput = caseSensitive === "no" ? input.toLowerCase() : input;
+
+        const reversedChosen = chosenInput.split("").reverse().join("");
+
+        if (chosenInput === reversedChosen) {
+            alert(`The entered string "${input}" is a palindrome.`);
+        } else {
+            alert(`The entered string "${input}" is not a palindrome.`);
+        }
+        //  #######################################################################################################
+        // Q2.write a script that accepts a string from user through prompt and count the number of ‘e’ characters in it.
+            let inputOfUser = prompt("Enter a string:");
+
+            let countOfe = 0;
+
+            if (inputOfUser) {
+            for (let char of inputOfUser) {
+                if (char.toLowerCase() === 'e') {
+                    countOfe++;
+                }
+            }
+            alert(`The number of 'e' in your string: ${countOfe}`);
+            } else {
+            alert("You should enter a string.");
+            }
+
+        //  #######################################################################################################
+        // Q3 .Write a script that reads from the user his info;validates and displays it with a welcoming message.
+        function userInfo(){
+            const name = prompt("Please Enter Your Name");
+            const email = prompt("Please Enter Your Email");
+            const age = prompt("Please Enter Your age");
+
+            const regEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!name || name.trim() === "") {
+                alert("Name cann`t be empty.");
+                return;
+            }
+
+            if (!regEmail.test(email)) {
+                alert("Invalid email format.");
+                return;
+            }
+
+            if ( parseInt(age) <= 0) {
+                alert("Invalid age. Please enter a positive number.");
+                return;
+            }
+            alert(`Welcome, ${name}!\n Age: ${age}\n Email: ${email}`);
+        }
+        userInfo();
+
+        //  #######################################################################################################
+        // Q4 .Write a script that ask the user to Enter the value of a circle’s radius in order to calculate its area.
+        function circleArea() {
+            const radius = parseFloat(prompt("Enter the radius of the circle:"));
+            if (!isNaN(radius) && radius > 0) {
+                const area = Math.PI * Math.pow(radius, 2);
+                alert(`The area of the circle is: ${area.toFixed(2)}`);
+            } else {
+                alert("Please enter a valid number for the radius.");
+            }
+        }
+        circleArea()
+
+        //  #######################################################################################################
+        // Q5. Enter another value to calculate its square root and alert the result.
+        function squareRoot() {
+            let root = prompt("Enter the value to calculate its squar root:");
+            if (!isNaN(root) && root > 0) {
+                let squarRo = Math.sqrt(root);
+                alert(`The Squar Root Of ${root}  is: ${squarRo}`);
+            } else {
+                alert("Please enter a valid number.");
+            }
+        }
+        squareRoot()
+
+    </script>
+</body>
+</html>
