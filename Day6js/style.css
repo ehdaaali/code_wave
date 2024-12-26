@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(247, 241, 234);
+}
+.container{
+    margin: 100px 300px;
+    width: 500px;
+    height: 300px;
+    padding: 10px;
+    padding-left: 13%;
+    line-height: 20px;
+    font-size: 16px;
+    color: rgb(23, 34, 30);
+}
+input{
+    width: 200px;
+    height: 25px;
+    margin: 5px;
+}
+button{
+    width: 100px;
+    height: 40px;
+    margin-left: 26%;
+}
+#result{
+    line-height: 30px;
+    font-weight: bold; 
+    color: rgb(233, 12, 12);
+}
