@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Task 1: Modify Array Elements & Length Instructions:
+
+        // ################################################################################
+        console.log("Task 1");
+
+        let fruits = ["apple","banana","orange"];
+        fruits.push("Blueberry");
+        console.log("After Push:",fruits);
+
+        fruits.pop();
+        console.log("After Pop:",fruits);
+
+        fruits.shift();
+        console.log("After shift:", fruits); 
+
+        fruits.unshift("Strawberry");
+        console.log("After unshift:", fruits);
+
+        // Task 1: Modify Array Elements & Length Instructions:
+
+        // ################################################################################
+
+        const numbers = [1, 2, 3, 4, 5, 6];
+
+        const evenNumbers = numbers.filter(num => num % 2 === 0);
+        
+        const squareNumbers = evenNumbers.map(num => num  ** 2);
+        console.log(`Task2 `);
+
+        console.log("Filtered Array (Even Numbers):", evenNumbers);
+        console.log("Mapped Array (Square Numbers):", squareNumbers);
+
+    </script>
+</body>
+</html>
