@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Info</title>
+    <style>
+        
+        th {
+            width: 200px;
+            height: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1  style="margin-left: 600px; margin-top: 100px;"> User Information</h1>
+
+    <div id="user-form"></div>
+    <table id="user-table" border="2" style="margin-left: 470px;">
+        <thead>
+            <tr>
+                <th> Name </th>
+                <th> Age </th>
+              </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        function userInfo(){
+            const numOfPersons = parseInt(prompt(`Enter the number of persons you want to input`));
+      if (isNaN(numOfPersons) || numOfPersons <= 0) {
+        alert(`Enter a valid number greater than 0`);
+        return;
+      }
+
+      const users = [];
+      for (let i = 0; i < numOfPersons; i++) {
+            let name, age;
+            while (true) {
+            name = prompt(`Enter the name of person ${i + 1} (4-9 characters)`);
+            if (name.length > 3 && name.length < 10) break;
+            alert(`Name must be greater than  3 and less than 10 characters`);
+            }
+            while (true) {
+            age = parseInt(prompt(`Enter the age of person ${i + 1} (11-59)`));
+            if (age >= 11 && age <= 59) break;
+            alert(`Age must be between 10 and 60 `);
+            }
+
+            users.push({ name, age });
+        }
+        usersInTable(users);
+    }
+    function usersInTable(users) {
+      const tableBody = document.querySelector("#user-table tbody");
+      tableBody.innerHTML = ""; 
+      users.forEach(user => {
+        const row = document.createElement("tr");
+        const nameCell = document.createElement("td");
+        nameCell.textContent = user.name;
+        const ageCell = document.createElement("td");
+        ageCell.textContent = user.age;
+        row.appendChild(nameCell);
+        row.appendChild(ageCell);
+        tableBody.appendChild(row);
+      });
+    }
+
+    userInfo();
+    
+    </script>
+    
+</body>
+</html>
