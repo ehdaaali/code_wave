@@ -12,9 +12,9 @@
         <h2 id="crud">Create, Read, Update, Delete (CRUD)</h2>
         <div class="form">
             <input type="text" id="nameInput" placeholder="Full Name">
-            <button class="btn btn-create" id="createBtn">Create</button>
-            <button class="btn btn-update" id="updateBtn" style="display: none;">Update</button>
-            <button class="btn btn-close" id="closeBtn" style="display: none;">Close</button>
+            <button class="btn btn-create" id="createBtn"> Create </button>
+            <button class="btn btn-update" id="updateBtn" style="display: none;"> Update </button>
+            <button class="btn btn-close" id="closeBtn" style="display: none;"> Close </button>
         </div>
         <table id="crudTable">
             <thead>
@@ -42,8 +42,8 @@
             row.innerHTML = `
                 <td>${name}</td>
                 <td>
-                    <button class="btn btn-edit" onclick="editRow(this)">Edit</button>
-                    <button class="btn btn-delete" onclick="deleteRow(this)">Delete</button>
+                    <button class="btn btn-edit" onclick="editRow(this)"> Edit </button>
+                    <button class="btn btn-delete" onclick="deleteRow(this)"> Delete </button>
                 </td>
             `;
             crudTable.appendChild(row);

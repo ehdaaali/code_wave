@@ -26,6 +26,8 @@ table, th, td {
 th, td {
     padding: 10px;
     text-align: center;
+    color: rgb(46, 47, 47);
+    font-weight: bold;
 }
 
 th {
@@ -46,24 +48,18 @@ th {
     height: 40px;
 }
 
-.btn-edit {
+.btn-edit, .btn-update  {
     background-color: #ffc107;
     color: #fff;
+    width: 70px;
+    height: 35px;
 }
 
-.btn-delete {
+.btn-delete, .btn-close {
     background-color: #dc3545;
     color: #fff;
-}
-
-.btn-update {
-    background-color: #28a745;
-    color: #fff;
-}
-
-.btn-close {
-    background-color: #6c757d;
-    color: #fff;
+    width: 70px;
+    height: 35px;
 }
 
 .form {
