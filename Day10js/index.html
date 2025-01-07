@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oop</title>
+</head>
+<body>
+    <script>
+        // Report on Object-Oriented Programming Concepts
+        // Write a report discussing the following OOP concepts:
+
+        // 1.Setter and Getter Methods
+        // Explain what setters and getters are.
+
+        // Setters and getters are methods used to control access to an object’s properties.
+        // A getter retrieves the value of a property, while a setter modifies the value.
+        // These methods encapsulate the internal representation of an object and allow for validation, 
+        // computation, or logging when properties are accessed or updated.
+
+
+        // Provide an example of their use in Js.
+        console.log(' 1.Setter and Getter Methods  Provide an example of their use in Js ');
+        class Person {
+            constructor(name, age, address) {
+                this._name = name;
+                this._age = age;
+                this.address = address;
+            }
+
+            // Getter for name
+            get name() {
+                return this._name;
+            }
+
+            // Setter for name
+            set name(newName) {
+                if (newName.length > 0) {
+                this._name = newName;
+                } else {
+                console.error('Name cannot be empty.');
+                }
+            }
+
+            // Getter for age
+            get age() {
+                return this._age;
+            }
+
+            // Setter for age
+            set age(newAge) {
+                if (newAge > 0) {
+                this._age = newAge;
+                } else {
+                console.error('Age must be positive.');
+                }
+            }
+
+            // Getter for address
+            get address() {
+                return this._address;
+            }
+
+            // Setter for address
+            set address(newAddress) {
+                if (newAddress.length > 0) {
+                this._address = newAddress;
+                } else {
+                console.error('Address cannot be empty.');
+                }
+            }
+        }
+
+            const person = new Person('Aylaa', 2, 'Cairo');
+            console.log(person); 
+            console.log('Name Of Person Before Edit :', person.name); 
+            person.name = 'Loly';
+            console.log('Name Of Person After Edit :', person.name); 
+            console.log('When trying to add a negative age :'); 
+            person.age = -10; 
+//##########################################################################################################################
+
+        // 2.Relationships Between Classes
+        // Discuss Association, Aggregation, and Composition.
+    // Association represents a general relationship between two classes, where objects of one class can interact with objects of another.
+
+        // Provide examples of each using Js.
+        console.log('2.1 Relationships Between Classes Association'); 
+        class Teacher {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+
+        class Course {
+            constructor(courseName, teacher) {
+                this.courseName = courseName;
+                this.teacher = teacher; 
+            }
+        }
+
+        const teacher = new Teacher('Eng Ehdaa');
+        const course = new Course('JavaScript', teacher);
+        console.log(course.courseName ,'course taught by',course.teacher.name);
+        // #####
+
+        // Aggregation is a specialized form of association 
+        // where one class contains a reference to another, but both can exist independently.
+        console.log('2.2 Relationships Between Classes Aggregation'); 
+        class Department {
+            constructor(name) {
+                this.name = name;
+                this.employees = [];
+            }
+
+            addEmployee(employee) {
+                this.employees.push(employee);
+            }
+        }
+
+        class Employee {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+
+            const dept = new Department('IT');
+            const emp1 = new Employee('Ali');
+            const emp2 = new Employee('May');
+
+            dept.addEmployee(emp1);
+            dept.addEmployee(emp2);
+            console.log('The', dept.name ,'department has these employees.',dept.employees.map(emp => emp.name));
+        // Composition represents a "has-a" relationship where one class owns another. 
+        // If the owner class is destroyed, the owned class also ceases to exist.  
+        console.log('2.3 Relationships Between Classes Composition'); 
+        class Engine {
+            constructor(type) {
+                this.type = type;
+            }
+        }
+
+        class Car {
+            constructor(model, engineType) {
+                this.model = model;
+                this.engine = new Engine(engineType);
+            }
+        }
+
+        const car = new Car('Tesla ', 'Electric');
+        console.log(`${car.model} has a ${car.engine.type} engine.`);
+    // 3.Inheritance
+    // Explain the concept of inheritance and how it is used in Js.
+
+    // Inheritance allows a class (child) to inherit properties and methods from another class (parent). 
+    // This promotes code reuse and establishes an "is-a" relationship.
+
+
+    // Demonstrate it with a simple example.
+        console.log('3.Inheritance Provide an example of their use in Js'); 
+        class Animal {
+            constructor(name) {
+                this.name = name;
+            }
+
+            makeSound() {
+                console.log(`${this.name} makes a sound.`);
+            }
+        }
+
+        class Horse extends Animal {
+            makeSound() {
+                console.log(`the horse ${this.name} let out neighed lodly Whinny.`);
+            }
+        }
+
+        const animal = new Animal('Generic Animal');
+        animal.makeSound();
+
+        const horse = new Horse('Secretariat');
+        horse.makeSound();
+
+
+
+
+
+    </script>
+</body>
+</html>

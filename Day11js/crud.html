@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CRUD Operations</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h2 id="crud">Create, Read, Update, Delete (CRUD)</h2>
+        <div class="form">
+            <input type="text" id="nameInput" placeholder="Full Name">
+            <button class="btn btn-create" id="createBtn">Create</button>
+            <button class="btn btn-update" id="updateBtn" style="display: none;">Update</button>
+            <button class="btn btn-close" id="closeBtn" style="display: none;">Close</button>
+        </div>
+        <table id="crudTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const nameInput = document.getElementById('nameInput');
+        const createBtn = document.getElementById('createBtn');
+        const updateBtn = document.getElementById('updateBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const crudTable = document.getElementById('crudTable').querySelector('tbody');
+
+        let editIndex = null;
+
+        function createRow(name) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${name}</td>
+                <td>
+                    <button class="btn btn-edit" onclick="editRow(this)">Edit</button>
+                    <button class="btn btn-delete" onclick="deleteRow(this)">Delete</button>
+                </td>
+            `;
+            crudTable.appendChild(row);
+        }
+
+        function editRow(button) {
+            const row = button.parentElement.parentElement;
+            const name = row.children[0].textContent;
+            editIndex = Array.from(crudTable.children).indexOf(row);
+            nameInput.value = name;
+
+            createBtn.style.display = 'none';
+            updateBtn.style.display = 'inline-block';
+            closeBtn.style.display = 'inline-block';
+        }
+
+        function updateRow() {
+            if (editIndex !== null) {
+                const row = crudTable.children[editIndex];
+                row.children[0].textContent = nameInput.value;
+                clearForm();
+            }
+        }
+
+        function deleteRow(button) {
+            const row = button.parentElement.parentElement;
+            crudTable.removeChild(row);
+        }
+
+        function clearForm() {
+            nameInput.value = '';
+            createBtn.style.display = 'inline-block';
+            updateBtn.style.display = 'none';
+            closeBtn.style.display = 'none';
+            editIndex = null;
+        }
+
+        createBtn.addEventListener('click', () => {
+            const name = nameInput.value.trim();
+            if (name) {
+                createRow(name);
+                nameInput.value = '';
+            }
+        });
+
+        updateBtn.addEventListener('click', updateRow);
+        closeBtn.addEventListener('click', clearForm);
+    </script>
+</body>
+</html>
