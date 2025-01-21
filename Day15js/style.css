@@ -1,0 +1,313 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ebe8e8;
+    height: 100vh;
+}
+
+header{
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+    z-index: 99;
+}
+header nav{
+    background: #ab9797;
+    margin: 0px auto 0;
+    max-width: 1200px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+header.sticyMenu{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+
+}
+
+header.sticyMenu nav{
+    max-width: 100%;
+    transition: all 0.3s ease-in-out;
+
+}
+
+a{
+    color: #000;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+header .container,
+header .navBarCollapse,
+header .searchInput .formDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+header .navBarLogo{
+    padding: 0px 15px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+header .menuItems{
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    margin-right: 25px;
+}
+
+header .menuItems .navItem {
+    margin-right: 25px;
+    cursor: pointer;
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1c1b1b;
+    text-transform: uppercase;
+}
+
+header .menuItems .navItem:hover,
+header .navBarCollapse i:hover {
+    color: rgb(245, 208, 161);
+    transition: all 0.6s ease-in-out;
+    font-weight: bold;
+}
+
+header .navBarCollapse i{
+    cursor: pointer;
+    line-height: 70px;
+    font-size: 18px;
+}
+
+header .carCount{
+    margin-right: 20px;
+}
+
+header .searchInput,
+header .cartListView{
+    background: #b19c9c;
+    padding: 5px 20px;
+    display: none;
+}
+
+header .cartListView{
+    height: 80vh;
+    overflow: scroll;
+}
+header .searchInput .formControl{
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0;
+    width: 100%;
+    height: 2.25rem;
+    line-height: 1.5;
+    outline: none;
+}
+
+header .searchInput .formControl::placeholder{
+    font-size: 14px;
+}
+
+header .searchInput .formDetails i,
+.cartListView .ri-close-line{
+    cursor: pointer;
+    font-size: 18px;
+}
+
+header .searchInput.active,
+header .searchInput.active{
+    display: block;
+}
+
+table{
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    text-align: justify;
+}
+table th,
+table tr{
+    padding: 1rem;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+table td{
+    padding: 0 15px;
+    font-weight: 500;
+}
+
+table thead tr th{
+    color: #fff;
+    border-bottom: 2px solid #ccc;
+}
+
+table tfoot{
+    background: lightgray;
+    color: #1c1b1b;
+}
+.bannerArea h1{
+    position: absolute;
+    top: 200px;
+    right: 34%;
+    font-size: 35px;
+    color: #812828;
+}
+
+.cartArea .filter{
+    height: 100%;
+    padding: 1rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+}
+
+.cartArea .filter label{
+    padding: 55px;
+}
+
+.cartArea .filter select,
+.cartArea .filter button{
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 18px;
+    padding: 9px;
+    text-transform: capitalize;
+}
+
+.cartArea .filter button{
+    background: #ebe8e8;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.cartArea .filter i{
+    font-size: 18px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.cartArea .container{
+    height: 100%;
+    padding: 1rem;
+    margin: auto;
+    margin-left: 35px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.cartArea .container .singleProduct{
+    position: relative;
+    padding: 1rem;
+    width: 290px;
+    height: 350px;
+    box-shadow: -1px 15px 30px -10px rgb(32,32,32);
+    border-radius: 5px;
+    background: #fff;
+    color: #222;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+#cardlist img{
+    width: 90%;
+    height: 70%;
+    object-fit: contain;
+    position: absolute;
+}
+
+#cardlist .productDetails{
+    width: 96%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background: #ab9797;
+    border-radius: 4px;
+    margin: 6px;
+}
+
+#cardlist .productDetails h5{
+    margin-bottom: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#cardlist .productDetails .productPrice{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#cardlist .productDetails .productPrice div{
+    display: flex;
+    gap: 15px; 
+}
+
+#cardlist .productDetails .productPrice i{
+    font-size: 18px;
+    background: #ccc;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+#cardlist .productDetails .productPrice i:hover{
+    background: rgb(245, 208, 161);
+}
+
+#cardlist .productDetails .productPrice span{
+    font-size: 16px;
+}
+
+footer{
+    width: 100%;
+    height: 40px;
+    background-color: #ab9797;
+    
+}
+
+footer p{
+    padding-left: 40%;
+    padding-top: 14px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+footer p i{
+    font-size: 16px;
+    padding-right: 5px;
+    color: rgb(86, 82, 77);
+}
+
+footer p i:hover{
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(227, 187, 138);
+    transition: 0.5s ease-in-out;
+}

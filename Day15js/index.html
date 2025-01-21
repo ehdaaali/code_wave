@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <title>Simple Products Shop</title>
+
+</head>
+<body>
+
+    <header>
+        <nav>
+            <!-- head -->
+            <div class="container">
+                <a href="#" class="navBarLogo">Shop</a>
+                <div class="navBarCollapse">
+                    <ul class="menuItems">
+                        <li class="navItem">Home</li>
+                        <li class="navItem">Shope</li>
+                        <li class="navItem">About</li>
+                        <li class="navItem">Contact</li>
+                    </ul>
+                    <div class="carCount">
+                        <i class="ri-shopping-cart-2-fill"></i>
+                        <span id="cartCount">0</span>
+                    </div>
+                    <i class="ri-search-line"></i>
+                </div>
+            </div>
+            <!-- search -->
+            <div class="searchInput">
+                <div class="formDetails">
+                    <input type="text" 
+                    class="formControl" 
+                    placeholder="Search here ...">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <!-- cart -->
+             <div class="cartListView">
+                <div style="text-align: end;">
+                    <i class="ri-close-line"></i>
+                </div>
+                <table class="cartTableDate">
+                    <thead>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tfoot>
+                        <th colspan="2" id="">Total Net Price</th>
+                        <th id="totalQuantity"></th>
+                        <th id="totalNetPrice"></th>
+                    </tfoot>
+                </table>
+             </div>
+
+        </nav>
+    </header>
+
+    <section class="bannerArea">
+        <img width="100%" height="450px" src="safe_shopping_1.jpg" alt="">
+        <h1>E-Commerce Website</h1>
+    </section>
+    
+    <section class="cartArea">
+        <div class="filter">
+            <div>
+                <label >Category</label>
+                <select  id="category">
+                    <option ></option>
+                </select>
+
+                <label >Limt</label>
+                <select  id="limit">
+                   <option ></option>
+                </select>
+
+                <label >Price</label>
+                <select id="sort">
+                    <option value=""></option>
+                    <option value="asc">Low to High</option>
+                    <option value="desc">High to Low</option>
+                </select>
+
+
+                <button onclick="filterSearch()">
+                    <i class="ri-search-2-line"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="container" id="cardlist"></div>
+    </section>
+
+    <footer>
+        <p>
+            &copy; 2025  
+            Find Us On Social Networks
+            <i class="ri-instagram-fill"></i>
+            <i class="ri-facebook-circle-fill"></i>
+            <i class="ri-twitter-fill"></i>
+        </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

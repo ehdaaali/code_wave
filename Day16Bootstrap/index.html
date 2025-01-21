@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background: #4471da;
+            color: #fff;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .sidebar .nav-link:hover {
+            background-color: #b6caf2;
+            font-weight: bold;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            width: calc(100% - 250px);
+        }
+        .content i{
+            padding: 10px;
+        }
+        .topbar {
+            background: #f8f9fa;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .message-box {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            width: 350px;
+            height: 200px;
+            line-height: 30px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .message-box .header {
+            background: #4471da;
+            color: #d6d4d4;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .message-box .body {
+            padding: 10px;
+        }
+        .message-box span{
+            color: #1c60e7;
+            font-weight: bold;
+            padding-right: 5px;
+        }
+        .message-box li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar p-3">
+        <h4 class="text-center">CODE WAVE</h4>
+        <hr>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#"><i class="fas fa-home"></i> Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-tasks"></i> Tasks</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+              </form>
+                <div>
+                    <i class="fas fa-bell me-6 fa-xl"></i>
+                    <i class="fa-solid fa-message fa-xl" id="message-icon" style="cursor: pointer;"></i>
+                    CodeWave
+                    <i class="fa-solid fa-circle-user fa-2xl"></i>
+                </div>
+            </div>
+          </nav>
+          <div class="message-box" id="message-box">
+            <div class="header">Notifications</div>
+            <div class="body">
+                <p>You have 3 new messages!</p>
+                <ul>
+                    <li><span>Message 1:</span> New task assigned.</li>
+                    <li><span>Message 1:</span>  System update available.</li>
+                    <li><span>Message 1:</span> Reminder for meeting at 2 PM.</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Task Table -->
+        <div class="mt-4">
+            <h2>Task</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Release</th>
+                        <th>Test Suite Name</th>
+                        <th>Scenario Type</th>
+                        <th>Manual TC Name</th>
+                        <th>VTAF TC Name</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Cell 1</td>
+                        <td>Cell 1</td>
+                        <td>Cell 2</td>
+                        <td>Cell 2</td>
+                        <td>Cell 2</td>
+                        <td>Cell 2</td>
+                        <!-- <td><button class="btn btn-success btn-sm">Completed</button></td> -->
+                         <td><div class="btn-group">
+                            <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Completed
+                            </button>
+                          </div></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Cell 3</td>
+                        <td>Cell 4</td>
+                        <td>Cell 4</td>
+                        <td>Cell 4</td>
+                        <td>Cell 4</td>
+                        <td>Cell 4</td>
+                        <td><div class="btn-group">
+                            <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                In Progress
+                            </button>
+                          </div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const messageIcon = document.getElementById('message-icon');
+        const messageBox = document.getElementById('message-box');
+
+        messageIcon.addEventListener('click', () => {
+            if (messageBox.style.display === 'none' || messageBox.style.display === '') {
+                messageBox.style.display = 'block';
+            } else {
+                messageBox.style.display = 'none';
+            }
+        });
+
+        // Optional: Close the message box if you click outside it
+        document.addEventListener('click', (event) => {
+            if (!messageBox.contains(event.target) && event.target !== messageIcon) {
+                messageBox.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
